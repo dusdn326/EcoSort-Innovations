@@ -30,6 +30,10 @@
             padding: 20px;
             background-color: #f0f0f0; /* 배경 색상 추가 */
             width: 60%;
+            height: 100px; /* 높이 고정 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
             position: relative; /* 쌓임 순서를 위해 설정 */
             z-index: 1; /* 텍스트가 이미지 위에 보이도록 설정 */
             transition: transform 0.5s ease; /* 애니메이션 추가 */
@@ -40,7 +44,9 @@
             text-align: left; /* 텍스트 왼쪽 정렬 */
             color: #333;
             width: 60%;
+            height: 200px; /* 높이 고정 */
             padding-left: 20px; /* 왼쪽 여백 추가 */
+            overflow: auto; /* 내용이 넘칠 경우 스크롤바 추가 */
         }
         .right {
             flex: 2;
@@ -118,8 +124,6 @@
 
             document.getElementById('content').innerText = content[section];
             document.getElementById('additional-text').innerText = additionalText[section]; // 추가 텍스트 업데이트
-            const contentElement = document.getElementById('content');
-            contentElement.style.transform = 'translateY(-250%)'; // 위로 이동
         }
 
         document.querySelector('.right').addEventListener('mouseover', function() {
